@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap");
+
+:root {
+    --first-color: #0794f1;
+    --first-color-alt: #056db4;
+    --second-color: #ffb62f;
+    --second-color-alt: #df8600;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    color: #000;
+    font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+    /* letter-spacing: 0.1rem; */
+}
+h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+h3 {
+    font-size: 2.3rem;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.button {
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem 0.5rem;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    overflow: hidden;
+    display: inline-flex;
+    transition: all 0.5s;
+}
+
+.button.first-color {
+    background: var(--second-color);
+    margin-right: 1.3rem;
+}
+
+.button.ghost {
+    border: 1px solid var(--second-color);
+}
+
+/* ========================================================================== */
+/*                                   HEADER                                   */
+/* ========================================================================== */
+.header {
+    max-height: 56px;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--first-color);
+    padding: 9px 0;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 38px;
+    height: 38px;
+}
+
+.icon-menu {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    fill: #fff;
+}
+
+.nav {
+    position: absolute;
+    top: 56px;
+    width: 100%;
+    height: 100vh;
+    background: #212121;
+    transition: all 0.6s;
+    left: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu li {
+    border-bottom: 1px solid #383838;
+}
+
+.menu li a {
+    text-decoration: none;
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #fff;
+}
+
+.menu li a:hover {
+    color: #fff;
+    background: var(--first-color-alt);
+}
+
+.show {
+    left: 0;
+}
+
+@media screen and (min-width: 1024px) {
+    .header {
+        padding: 0;
+    }
+
+    .icon-menu {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav {
+        position: static;
+        height: 56px;
+        width: auto;
+        transition: none;
+    }
+
+    .menu li {
+        border-bottom: 0;
+    }
+
+    .menu li a {
+        background: #0794f1;
+        padding: 1.1875rem 1.5rem;
+    }
+}
+
+/* ========================================================================== */
+/*                                   BANNER                                   */
+/* ========================================================================== */
+
+.banner {
+    position: relative;
+}
+
+.banner:before {
+    content: "";
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.banner .banner__img {
+    height: 100vh;
+    width: 100%;
+}
+
+.banner .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner .banner__title {
+    margin: 0;
+    padding-bottom: 1.2rem;
+}
+
+.banner .banner__subtitle {
+    margin: 0;
+    padding-bottom: 0.3rem;
+}
+
+.button.first-color:hover,
+.button.ghost:hover {
+    background: var(--second-color-alt);
+}
+
+@media screen and (min-width: 768px) {
+    .banner .button {
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .banner .banner__title {
+        font-size: 3.7rem;
+    }
+
+    .banner .banner__subtitle {
+        font-size: 2.3rem;
+        padding: 0.4rem 0;
+    }
+
+    .banner .banner__img {
+        height: 80vh;
+        width: 100%;
+    }
+
+    .banner:before {
+        height: 80vh;
+    }
+
+    .banner .container {
+        text-align: left;
+        align-items: flex-start;
+    }
+    .banner .button-primary {
+        margin-right: 2rem;
+    }
+}
